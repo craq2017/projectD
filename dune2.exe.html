@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Guryanov Aleksander">
+    <meta name="description" content="Browser version of classic game Dune 2. Dune 2 online can be played in every major browser.">
+    <meta name="keywords" content="dune,dune 2,browser,online,play,game" />
+
+    <title>Dune 2 - Online (browser verion)</title>
+
+    <link rel="alternate" hreflang="ru" lang="ru" href="/ru/dune2"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/v2/css/bootstrap.min.css?eOf5HAxMykFeBoNiaqI5JQ" rel="stylesheet">
+
+    <link href="/v2/css/game-description.css?1IsQWYtk0PIbQKKFkVBuNg" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/v2/font-awesome-4.2.0/css/font-awesome.min.css?_tqXSnfqV4O4vmc_FCt8iA" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" media="all" href="/js/colorbox/colorbox.css?ddOjwI4UW70FUDuFZe4dIA"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- from browser -->
+    <link type="text/css" rel="stylesheet" media="all" href="/css/Aristo/Aristo.css?Rf_CCHbgWCBBS6RkZsHktw"/>
+
+    <script src="/v2/js/jquery.js?PJE32IoAsa4LQf9qcFcWFQ"></script>
+    <script type="text/javascript" src="/js/jquery-ui.min.js?5DamkqBvJsReymBh5ECV6g"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js?DrMqCliYKED8jwtTp-4SJA"></script>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" itemscope itemtype="http://schema.org/VideoGame">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/en">Epicport</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/en/dune2">Dune 2 - Browser</a></li>
+          <li ><a href="/en">More games</a></li>
+          <!-- <li ><div class="under-maintenance">Web site is under maintenance something can goes wrong, please be patient</div></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/en/dune2">English</a></li>
+          <li class=""><a href="/ru/dune2">Russian</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- Intro Header -->
+  <header>
+    <div class="container">
+      <h1 itemprop="name">Dune 2 - Online (browser verion)</h1>
+      <div class="section-divider"></div>
+    </div>
+  </header>
+  <section class="game_container">
+    
+<div class="dune2-select-house-dialog dialog" title="Choose your side">
+  <div class="opendune-house-container">
+    <p class="opendune-select-house">Choose your side</p>
+    <p class="opendune-house opendune-a-house" title="House Atreides"></p>
+    <p class="opendune-house opendune-o-house" title="House Ordos"></p>
+    <p class="opendune-house opendune-h-house" title="House Harkonnen"></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="opendune-toggle-sound opendune-mute"></div>
+    
+<script type="text/javascript">
+  var Epicport = {}; // Namespace
+
+  Epicport.i18n = {
+    html_login_success_title: "You successfully logged in",
+    html_can_save_desc: "Now you can save games",
+    html_can_load_desc: "Now you can load game saves",
+    html_success: "Success",
+    html_game_saved: "Game successfully saved",
+    html_ok: "Ok",
+    html_cancel: "Cancel",
+  };
+
+  try {
+    var profile = $.cookie('profile');
+    if (profile) {
+      Epicport.profile = JSON.parse(profile);
+    }
+  } catch (e) {
+    Epicport.profile = undefined;
+  }
+</script>
+
+<script type="text/javascript" src="/js/async.js?L_iaJyb3dF0a2JOTr-Twqw"></script>
+<script type="text/javascript" src="/js/core/dialog.js?faXkywtia5V-naBV16FBOw"></script>
+<script type="text/javascript" src="/js/core/login.js?IGb-mWEMxKKGUKbjWtZzsw"></script>
+<script type="text/javascript" src="/js/core/navbar.js?NJ1EjOdLE2NlFaDlEsGpAA"></script>
+<script type="text/javascript" src="/js/game/canvas.js?g7hBN1ZwscsQwZek7wiwjA"></script>
+<script type="text/javascript" src="/js/game/xcom.js?d7wOYW07WT8H7-GsVcXXnw"></script>
+<script type="text/javascript" src="/js/game/dune2.js?3mFL7lM5-Px9jMVmkvOstQ"></script>
+<script type="text/javascript" src="/js/game/ttd.js?W4cik978zaWyEuB9VTKyJQ"></script>
+<script type="text/javascript" src="/js/game/caesaria.js?f8rwkpcXpo3HdOWOIB4z5g"></script>
+<script type="text/javascript" src="/js/game/api.js?YjMTDPjh0IKosam0kWRBZw"></script>
+<div class="login_modal" title="Login required">
+  <div>You should login if you want save or load game</div>
+  <hr/>
+  <form class="login">
+    <div class="input">
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email"/>
+      <br/>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password"/>
+    </div>
+    <div class="left">
+      <button id="form_login_button">Login</button>
+    </div>
+    <div class="right"><a href="/en/register" target="_blank">Register</a></div>
+  </form>
+  <hr/>
+  <p class="social">Social networks</p>
+  <div id="uLogin1" data-uloginid="fee955b6"></div>
+</div>
+
+<script type="text/javascript">
+  function login(token) {
+    $.getJSON("//ulogin.ru/token.php?host=" + encodeURIComponent(location.toString()) + "&token=" + token + "&callback=?", function(data) {
+        data = $.parseJSON(data.toString());
+        if (!data.error) {
+          new Epicport.Login({ data: data });
+        } else {
+          Epicport.modalMessage("Invalid login or password", data.error);
+        }
+    });
+  }
+
+  $('#form_login_button').button();
+  $('#form_login_button')
+    .click(function () {
+      $.post("/xhr/login", { 
+        'csrf-token': $("meta[name='csrf-token']").attr("content"),
+        email: $('#email').val(),
+        password: $('#password').val()
+      },
+      function (data) {
+        new Epicport.Login({ data: data });
+      })
+    .fail(function() {
+      Epicport.modalMessage("Invalid login or password", "Invalid login or password");
+    });
+    
+    return false;
+  });
+</script>
+
+<script src="//ulogin.ru/js/ulogin.js"></script>
+
+<div class="canvas_container opendune">
+  <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+  <div id="output" class="canvas_overlay">
+
+    <div class="click_to_start">
+      <span class="huge">Please click to start the game</span>
+      <span class="little"><b>NOTE:</b>&nbsp;Your browser may hang up during loading of the game, please be patient</span>
+    </div> 
+
+    <div class="loader">
+      <div class="info">
+        <div id="status" class="status"></div>
+        <div id="progress" class="progressbar"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="select-file-dialog dialog" title="Select file">
+  <p class="label">
+    Select file
+    <ul class="select-file-dialog-saves">
+      <span>No saved games found</span>
+    </ul>
+  </p>
+  <p class="select-file-input">
+    <label for="select-file-dialog-file">Enter file name</label>
+    <input id="select-file-dialog-file" type="text" value="New Game" />
+  </p>
+</div>
+
+<script type="text/javascript">
+  Epicport.API = new Epicport.API({ 
+    game: "opendune",
+    arguments: ["-a"],
+    preRun: function () {},
+    start: 
+function () {
+  var preventUpDown = function (e) { 
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      e.preventDefault(); 
+    }
+  }
+
+  document.addEventListener("keydown", preventUpDown);
+  document.addEventListener("keyup", preventUpDown);
+  document.addEventListener("keypress", preventUpDown);
+
+  var dune2 = new Epicport.Dune2();
+  dune2.start('opendune-en.js');
+}   
+,
+    js: '/js/opendune.js?-4271282388499466236' 
+  });
+  var Module = Epicport.API.module();
+</script>
+  </div>
+   <!-- <script src="/opendune-en.js"/> -->
+</div>
+  </section>
+
+  <section class="description_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="icon" src="/v2/img/dune2-icon-50x50.png?9Io2Eo77VxOQ0eYoe7D2YA" alt="Logo" draggable="false"><br><br>
+          <a href="#" class="btn btn-primary btn-lg link-to-play">Play online</a><br><br>
+       
+          <!--noindex-->
+          <div>
+            <div class="yashare-auto-init" data-yashareL10n="en" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
+          </div>
+          <!--/noindex-->
+
+          <br>
+
+          <div>
+                          <a href="/en/dune2/android"><div class="new-badge-link">Version for Android</div></a>
+                      </div>
+          <br>
+          Category <span class="color-gray">Games / Strategy</span><br>
+          Age rating <span itemscope itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating" class="color-gray">+<b itemprop="ratingValue">0</b></span><br>
+          Approximate download size <span class="color-gray"><strong><span itemprop="fileSize">4</span> Mb</strong></span><br>
+          Platform <span class="color-gray" itemprop="gamePlatform">Browser</span><br>
+
+          <meta itemprop="playMode" content=" SinglePlayer" >
+
+          <br>
+
+          <h4>More games</h4>
+
+          <div class="section-divider other-game-section-divider"></div>
+
+                      <div class="other-game">
+              <img class="icon" src="/v2/img/dune2-icon-50x50.png?9Io2Eo77VxOQ0eYoe7D2YA" alt="Logo" draggable="false">
+              <a class="page-scroll" href="/en/dune2/android"><strong>Dune 2 - Android</strong></a>
+            </div>
+                      <div class="other-game">
+              <img class="icon" src="/v2/img/openttd-icon-50x50.png?GDX31iDxbHcZBItYOAyE9g" alt="Logo" draggable="false">
+              <a class="page-scroll" href="/en/ttd"><strong>TTD</strong></a>
+            </div>
+                      <div class="other-game">
+              <img class="icon" src="/v2/img/xcom-icon-50x50.png?XBxyJZkjI2CdpGQ9oXg1hA" alt="Logo" draggable="false">
+              <a class="page-scroll" href="/en/xcom"><strong>X-Com</strong></a>
+            </div>
+                      <div class="other-game">
+              <img class="icon" src="/v2/img/caesar-icon-50x50.png?BGU7JBHDqU9V4PJgpl7XHA" alt="Logo" draggable="false">
+              <a class="page-scroll" href="/en/caesar3"><strong>Caesar III</strong></a>
+            </div>
+                  </div>
+        <div class="col-sm-9">
+            <div class="main-image">
+              <img src="/v2/img/dune2-main-image.jpg?ETPCp8xVyBw2xfm3LzmsQw" alt="Main image" class="img-responsive" draggable="false" itemprop="image">
+            </div>
+
+            <div class="screenshots">
+                              <a class="colorbox" href="/dune2/00.png?h6gFBT5ZeLl6X46sg2PIVw" rel="nofollow" itemprop="screenshot">
+                  <img class="small-image" src="/dune2/00_small.png?w8RNIsVcW0BXAL-ehimzuA" alt="screenshot" itemprop="thumbnail">
+                </a>
+                              <a class="colorbox" href="/dune2/01.png?SdfslNNPmsj7X5P8q3oigQ" rel="nofollow" itemprop="screenshot">
+                  <img class="small-image" src="/dune2/01_small.png?r3Od6ZfIhol_3xwa7wF0dw" alt="screenshot" itemprop="thumbnail">
+                </a>
+                              <a class="colorbox" href="/dune2/02.png?v_Ex1dO3qtZ1lzXGqmlgyg" rel="nofollow" itemprop="screenshot">
+                  <img class="small-image" src="/dune2/02_small.png?Pm5LRTCZ0ZNMQL5W_qSoaw" alt="screenshot" itemprop="thumbnail">
+                </a>
+                              <a class="colorbox" href="/dune2/03.png?gpFd9UcxT0NKsTz2SoIPoQ" rel="nofollow" itemprop="screenshot">
+                  <img class="small-image" src="/dune2/03_small.png?bjjz5qrunEYqWmUVKh1JhQ" alt="screenshot" itemprop="thumbnail">
+                </a>
+                          </div>
+
+            <h2>Description</h2>
+
+            <div class="adsense">
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-9186880238664597"
+                   data-ad-slot="2592254161"
+                   data-ad-format="auto"></ins>
+            </div>
+            <br>
+
+            <div class="game-description" itemprop="description">
+              <p>This is recreation of the classic strategy game Dune 2. Game is HTML5 compliant and can be played on every major browser like chrome or firefox.</p><p>You can play in single-player mode for all of three houses. All you games will be saved on server and you can continue playing it any time.</p>
+            </div>
+
+            <p class="text-right">
+              <a href="#" class="btn btn-default btn-lg link-to-play">Play online</a>
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="section-divider"></div>
+      <div class="footer-content">
+        <a href="http://www.linkedin.com/pub/aleksander-guryanov/3b/738/734">Guryanov Aleksander</a>, 2015
+      </div>
+    </div>
+  </footer>
+
+  <!-- Yandex -->
+  <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8" defer></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/v2/js/bootstrap.min.js?KBzVDdn1jFVQYg_BSKe8OQ" defer></script>
+
+  <!-- Colorbox -->
+  <script src="/js/colorbox/jquery.colorbox-min.js" defer></script>
+  <script type="text/javascript">
+    setTimeout(function() {
+      $("a.colorbox").colorbox({ rel: 'screenshots' })  ;
+    }, 3000);
+    $('.link-to-play').click(function(e) {
+      e.preventDefault();
+
+      $('.description_container').hide();
+      $('.game_container').fadeIn('slow', function() {
+        $('.click_to_start').trigger('click');
+      });
+    });
+  </script>
+
+
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>     
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23247073 = new Ya.Metrika({id:23247073, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23247073" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46144566-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
