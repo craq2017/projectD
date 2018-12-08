@@ -195,8 +195,8 @@ Module.expectedDataFileDownloads++;
       // worker
       PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
     }
-    var PACKAGE_NAME = '/home/caiiiycuk/js/js-dos.com/build/games/gob1_en.exe.data';
-    var REMOTE_PACKAGE_BASE = 'gob1_en.exe.data';
+    var PACKAGE_NAME = '/games/gob1';
+    var REMOTE_PACKAGE_BASE = 'gob1';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       Module.printErr('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
