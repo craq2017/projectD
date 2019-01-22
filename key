@@ -1,0 +1,12 @@
+{
+    "company_name": "Sberbank Rossii OAO", 
+    "contact_email": "dafedorow@sberbank.ru", 
+    "contact_name": "Daniil Fedorov", 
+    "hostname": "4c005df5addc44289cb756bc4d572220", 
+    "instance_count": 100, 
+    "license_date": 1553192815, 
+    "license_key": "7faef963f1094c611c2c05f2d8de221dfc7b8cbefe273a7801723d72b6e240ee", 
+    "license_type": "enterprise", 
+    "subscription_name": "Red Hat Ansible Tower, Standard (100 Managed Nodes) Trial", 
+    "trial": true
+}
